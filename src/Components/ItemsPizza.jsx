@@ -17,7 +17,7 @@ export function ItemsPizza() {
                     {/* Hardcoded array of pizza objects each containing name, price and image 
                     that is iterated with map that then returns a productcard component for each object */}
                     {[
-                        { name: "Opera", price: 12, image: "https://imageproxy.wolt.com/menu/menu-images/635a9823604091275ae7babb/02780f08-560b-11ed-b961-0a9917a49afa_opera__1_.jpeg?w=600" },
+                        { name: "Opera", price: 120, image: "https://imageproxy.wolt.com/menu/menu-images/635a9823604091275ae7babb/02780f08-560b-11ed-b961-0a9917a49afa_opera__1_.jpeg?w=600" },
                         { name: "Capricciosa", price: 120, image: "https://imageproxy.wolt.com/menu/menu-images/635a9823604091275ae7babb/7d9bf8b6-560b-11ed-b53b-dedc69a4c8c6_jamaica.jpeg?w=600" },
                         { name: "Bolognese", price: 120, image: "https://imageproxy.wolt.com/menu/menu-images/635a9823604091275ae7babb/61429ee6-560a-11ed-8f08-0e09c98cbf99_orientale.jpeg?w=600" },
                         { name: "Hawaii", price: 120, image: "https://imageproxy.wolt.com/menu/menu-images/635a9823604091275ae7babb/ef2e5966-560a-11ed-a000-6600b6848aa1_hawaii_1.jpeg?w=600" },
