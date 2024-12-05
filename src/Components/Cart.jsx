@@ -12,6 +12,7 @@ export function Cart() {
                 <img
                     src="https://i.ibb.co/r52d3vd/173332777776908795.png"
                     alt="!PizzaHut Logo"
+                    width="172px"
                 />
             </div>
             <h2 className="cart-title">Your Cart</h2>

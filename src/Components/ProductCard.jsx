@@ -6,10 +6,8 @@ export function ProductCard({ name, price, image, onAdd, onIncrement, onDecremen
             <div className="product-card">
                 <img src={image} alt={name} />
                 <div className="product-card-content">
-                    <div style={{ display: "flex", justifyContent: "space-between" }}>
-                        <h2 className="product-card-title">{name} </h2>
-                        <p className="product-card-price">{price}:-</p>
-                    </div>
+                    <h2 className="product-card-title">{name} </h2>
+                    <p className="product-card-price">{price}:-</p>
                     {itemInCart ?
                         (
                             <div className="cart-item-controls">
