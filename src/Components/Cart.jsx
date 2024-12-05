@@ -26,11 +26,11 @@ export function Cart() {
                             </div>
                         </div>
                         <div className="cart-item-controls">
-                            <button className="cart-item-button" onClick={() => dispatch(decrement(item.name))}>
+                            <button className="cart-item-button1" onClick={() => dispatch(decrement(item.name))}>
                                 -
                             </button>
                             <span className="cart-item-quantity">{item.quantity}</span>
-                            <button className="cart-item-button" onClick={() => dispatch(increment(item.name))}>
+                            <button className="cart-item-button1" onClick={() => dispatch(increment(item.name))}>
                                 +
                             </button>
                         </div>
@@ -39,7 +39,41 @@ export function Cart() {
             ) : (
                 <p>Your cart is empty!</p>
             )}
-            <p className="cart-total">Total Price: {totalPrice}:-</p>
+            <div
+                style={{
+                    borderTop: "1px solid #ccc",
+                    paddingTop: "12px",
+                }}
+            >
+                <p
+                    style={{
+                        fontSize: "18px",
+                        fontWeight: "bold",
+                        margin: "0 0 12px",
+                        color: "#333",
+                    }}
+                >
+                    Total Price: <span style={{ color: "#ff4500" }}>{totalPrice}:-</span>
+                </p>
+                <button
+                    style={{
+                        backgroundColor: "#ff4500",
+                        color: "#fff",
+                        border: "none",
+                        borderRadius: "4px",
+                        padding: "12px",
+                        width: "100%",
+                        fontSize: "16px",
+                        cursor: "pointer",
+                        transition: "background-color 0.3s",
+                    }}
+                    onMouseOver={(e) => (e.target.style.backgroundColor = "#e03e00")}
+                    onMouseOut={(e) => (e.target.style.backgroundColor = "#ff4500")}
+                >
+                    CONFIRM ORDER
+                </button>
+            </div>
+
         </div>
     );
 }
