@@ -2,9 +2,10 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { increment, decrement } from '../Features/cartSlice';
 
+// Component that displays the cart
 export function Cart() {
-    const { items, totalPrice } = useSelector((state) => state.cart);
-    const dispatch = useDispatch();
+    const { items, totalPrice } = useSelector((state) => state.cart); // Hook to access the redux state of cart
+    const dispatch = useDispatch(); // Hook to dispatch Redux actions
 
     return (
         <div className="cart">
@@ -15,9 +16,11 @@ export function Cart() {
                     width="172px"
                 />
             </div>
+
             <h2 className="cart-title">Your Cart</h2>
+            {/* Checks if the cart has any items with ternary operator */}
             {items.length ? (
-                items.map((item) => (
+                items.map((item) => ( // If cart has items then render out the list of items with map 
                     <div key={item.name} className="cart-item">
                         <div className="cart-item-details">
                             <img src={item.image} alt={item.name} className="cart-item-image" />
@@ -27,6 +30,7 @@ export function Cart() {
                             </div>
                         </div>
                         <div className="cart-item-controls">
+                            {/*Dispach action decrement/increment on that specific item and shows the current quantity of that item */}
                             <button className="cart-item-button1" onClick={() => dispatch(decrement(item.name))}>
                                 -
                             </button>
@@ -38,43 +42,16 @@ export function Cart() {
                     </div>
                 ))
             ) : (
-                <p>Your cart is empty!</p>
+                <p className="cart-empty-message">Your cart is empty!</p>
             )}
-            <div
-                style={{
-                    borderTop: "1px solid #ccc",
-                    paddingTop: "12px",
-                }}
-            >
-                <p
-                    style={{
-                        fontSize: "18px",
-                        fontWeight: "bold",
-                        margin: "0 0 12px",
-                        color: "#333",
-                    }}
-                >
-                    Total Price: <span style={{ color: "#ff4500" }}>{totalPrice}:-</span>
+            <div className="cart-summary">
+                <p className="cart-total-price">
+                    Total Price: <span className="cart-total-highlight">{totalPrice}:-</span>
                 </p>
-                <button
-                    style={{
-                        backgroundColor: "#ff4500",
-                        color: "#fff",
-                        border: "none",
-                        borderRadius: "4px",
-                        padding: "12px",
-                        width: "100%",
-                        fontSize: "16px",
-                        cursor: "pointer",
-                        transition: "background-color 0.3s",
-                    }}
-                    onMouseOver={(e) => (e.target.style.backgroundColor = "#e03e00")}
-                    onMouseOut={(e) => (e.target.style.backgroundColor = "#ff4500")}
-                >
+                <button className="cart-confirm-button">
                     CONFIRM ORDER
                 </button>
             </div>
-
         </div>
     );
 }

@@ -12,8 +12,9 @@ export default function App() {
     <>
       <Navbar />
       <div className="container">
+        {/* Items shown in frontpage depends on the Navlink in navbar that is connected to the route element. ItemsPiza component is shown by default */}
         <Routes>
-          <Route path="/" element={<ItemsPizza />} />
+          <Route index element={<ItemsPizza />} />
           <Route path="/pizza" element={<ItemsPizza />} />
           <Route path="/sallad" element={<ItemsSallad />} />
           <Route path="/sides" element={<ItemsSides />} />

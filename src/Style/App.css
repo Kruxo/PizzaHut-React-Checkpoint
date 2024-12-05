@@ -14,7 +14,7 @@ body {
   flex-direction: row;
   align-items: flex-start;
   height: 100vh;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 /* Navbar */
@@ -75,7 +75,7 @@ body {
 
 .items-pizza-container {
   flex: 2;
-  /* overflow-y: auto; Enable vertical scrolling */
+  overflow-y: auto; /*If needed, being able to scroll inside the items components depending on window size*/
   height: 100vh; 
   padding: 0 20px; 
   box-sizing: border-box; 
@@ -151,6 +151,11 @@ body {
   padding: 10px 16px;
   font-size: 14px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.product-card-button:hover{
+  background-color: #e03e00;
 }
 
 /* Cart */
@@ -166,6 +171,7 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-left: 1px solid #ddd;
   flex: 1;
+  overflow-y: auto; /* If overflowing, then we can scroll*/
 }
 
 .cart-title {
@@ -237,6 +243,7 @@ body {
   padding: 5px 10px;
   font-size: 14px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .cart-item-button1 {
@@ -248,6 +255,12 @@ body {
   padding: 5px 10px;
   font-size: 14px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cart-item-button:hover, 
+.cart-item-button1:hover {
+  background-color: #e03e00;
 }
 
 .cart-item-quantity {
@@ -257,6 +270,44 @@ body {
   text-align: center;
 }
 
+.cart-empty-message {
+  text-align: center;
+  font-size: 18px;
+  color: #888;
+  margin-top: 20px;
+}
+
+.cart-summary {
+  border-top: 1px solid #ccc;
+}
+
+.cart-total-price {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 12px 0;
+  color: #333;
+ 
+}
+
+.cart-total-highlight {
+  color: #ff4500;
+}
+
+.cart-confirm-button {
+  background-color: #ff4500;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 12px;
+  width: 100%;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cart-confirm-button:hover {
+  background-color: #e03e00;
+}
 
 /* Footer */
 
@@ -275,7 +326,108 @@ body {
 }
 
 
+/* Mobile CSS */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Stack items vertically */
+    height: auto; /* Allow content to grow with height */
+    overflow: visible; /* Prevent hidden content */
+    align-items: center;
+  }
 
+  /* Navbar adjustments */
+  .nav-container {
+    flex-direction: row; /* Keep navbar links in a row */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space out logo and links */
+    padding: 10px;
+    gap: 10px;
+  }
 
+  .navbar-links {
+    flex-direction: row; /* Ensure links are in a row */
+    gap: 10px; /* Add spacing between links */
+  }
+
+  .navbar-logo {
+    font-size: 20px; /* Slightly smaller for smaller screens */
+  }
+
+  /* Items grid */
+  .items-container {
+    padding: 10px;
+    width: 100%;
+  }
+
+  .items-grid {
+    grid-template-columns: 1fr; /* Ensure one product card per row */
+    gap: 20px;
+  }
+
+  /* Product card adjustments */
+  .product-card {
+    width: 100%; /* Full width for each card */
+    margin: 0; /* Remove margins between cards */
+  }
+
+  .product-card img {
+    height: 200px; /* Increase image height */
+  }
+
+  .product-card-content {
+    padding: 10px;
+  }
+
+  .product-card-title {
+    font-size: 18px;
+  }
+
+  .product-card-price {
+    font-size: 16px;
+  }
+
+  .product-card-button {
+    width: 100%; /* Button takes full width */
+    font-size: 14px;
+  }
+
+  /* Cart adjustments */
+  .cart {
+    width: 100%; /* Use full width */
+    margin: 20px 0; /* Add space between the cart and product items */
+    padding: 25px;
+  }
+
+  .cart-title {
+    font-size: 18px;
+  }
+
+  .cart-item-details {
+    flex-direction: row;
+    gap: 5px;
+  }
+
+  .cart-item-image {
+    width: 40px;
+    height: 40px;
+  }
+
+  .cart-item-controls {
+    gap: 10px;
+  }
+
+  .cart-total-price {
+    font-size: 16px;
+  }
+
+  .cart-confirm-button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .cart-empty-message {
+    font-size: 16px;
+  }
+}
 
 

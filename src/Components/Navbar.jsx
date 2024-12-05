@@ -10,7 +10,7 @@ export function Navbar() {
             <div
                 className="navbar-logo"
             >
-                <NavLink to="/" className="navbar-link">🍕 !PizzaHut</NavLink>
+                <NavLink to="/" className="navbar-link" >🍕 !PizzaHut</NavLink>
             </div>
 
             <div className="navbar-links">
