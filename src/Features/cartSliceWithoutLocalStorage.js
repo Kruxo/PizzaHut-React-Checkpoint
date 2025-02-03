@@ -1,13 +1,11 @@
 // cartSlice.js
 import { createSlice } from "@reduxjs/toolkit";
 
-//Initial cart state
-const loadCartFromLocalStorage = () => {
-  const storedCart = localStorage.getItem("cart");
-  return storedCart ? JSON.parse(storedCart) : { items: [], totalPrice: 0 }; // Empty cart array and total price of the cart
+// Initial cart state
+const initialState = {
+  items: [], // Empty cart array
+  totalPrice: 0, // Total price of the cart
 };
-
-const initialState = loadCartFromLocalStorage();
 
 // Slice definition which contains the state and reducer logic for cart
 const cartSlice = createSlice({
@@ -30,7 +28,6 @@ const cartSlice = createSlice({
         });
       }
       state.totalPrice += price; // Updates total price with the added item's price
-      localStorage.setItem("cart", JSON.stringify(state)); // Save to localStorage
     },
 
     // Action that increments the quantity of a specific item that already exists in cart
@@ -39,7 +36,6 @@ const cartSlice = createSlice({
       if (item) {
         item.quantity += 1;
         state.totalPrice += item.price; // Updates current total price with the added item's price
-        localStorage.setItem("cart", JSON.stringify(state));
       }
     },
 
@@ -55,13 +51,11 @@ const cartSlice = createSlice({
           // If quantity is not equal to 1 then just decrement the quantity by 1
           item.quantity -= 1;
         }
-        localStorage.setItem("cart", JSON.stringify(state));
       }
     },
     clearCart: (state) => {
       state.items = [];
       state.totalPrice = 0;
-      localStorage.removeItem("cart"); // Clear localStorage when confirming order
     },
   },
 });

@@ -6,18 +6,19 @@ import { ItemsSallad } from "./Components/ItemsSallad";
 import { Navbar } from "./Components/Navbar";
 import { Route, Routes } from "react-router-dom";
 import { ItemsSides } from "./Components/ItemsSides";
+import { Confirmation } from "./Components/Confirmation";
 
 export default function App() {
   return (
     <>
       <div
-      // style={{
-      //   display: "flex",
-      //   flexDirection: "column",
-      //   maxWidth: "1200px",
-      //   margin: "0 auto",
-      //   borderLeft: "1px solid #ddd",
-      // }}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          maxWidth: "1200px",
+          margin: "0 auto",
+          borderLeft: "1px solid #ddd",
+        }}
       >
         <Navbar />
         <div className="container">
@@ -27,6 +28,7 @@ export default function App() {
             <Route path="/pizza" element={<ItemsPizza />} />
             <Route path="/sallad" element={<ItemsSallad />} />
             <Route path="/sides" element={<ItemsSides />} />
+            <Route path="/confirmation" element={<Confirmation />} />
           </Routes>
           <Cart />
         </div>

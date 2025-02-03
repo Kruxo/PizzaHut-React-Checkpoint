@@ -1,12 +1,19 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { increment, decrement } from '../Features/cartSlice';
+import { increment, decrement, clearCart } from '../Features/cartSlice';
+import { useNavigate } from 'react-router-dom';
 
 // Component that displays the cart
 export function Cart() {
     const { items, totalPrice } = useSelector((state) => state.cart); // Hook to access the redux state of cart
     const dispatch = useDispatch(); // Hook to dispatch Redux actions
 
+    const navigate = useNavigate();
+
+    const handleConfirmOrder = () => {
+        dispatch(clearCart()); // Clears the cart
+        navigate("/confirmation"); // Redirects to Confirmation page
+    };
     return (
         <div className="cart">
             <div style={{ display: "flex", justifyContent: "center" }}>
@@ -48,7 +55,14 @@ export function Cart() {
                 <p className="cart-total-price">
                     Total Price: <span className="cart-total-highlight">{totalPrice}:-</span>
                 </p>
-                <button className="cart-confirm-button">
+                <button className="cart-confirm-button" onClick={handleConfirmOrder}
+                    disabled={items.length === 0}
+                    style={{
+                        backgroundColor: items.length === 0 ? "#ccc" : "#ff4500",
+                        cursor: items.length === 0 ? "not-allowed" : "pointer",
+                        opacity: items.length === 0 ? "0.6" : "1",
+                        transition: "0.3s"
+                    }}>
                     CONFIRM ORDER
                 </button>
             </div>

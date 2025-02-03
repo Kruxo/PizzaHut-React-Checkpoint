@@ -97,8 +97,6 @@ body {
   font-size: 2,5rem; 
   font-weight: bold;
   color: #fff; 
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: rgb(0, 0, 0);
   background-color: #ff4500; 
   padding: 10px 0; 
   margin: 10px 0; 
@@ -332,28 +330,28 @@ body {
 /* Mobile CSS */
 @media (max-width: 768px) {
   .container {
-    flex-direction: column; /* Stack items vertically */
-    height: auto; /* Allow content to grow with height */
-    overflow: visible; /* Prevent hidden content */
+    flex-direction: column; /*Stack items vertically*/
+    height: auto; /*Allow content to grow with height*/
+    overflow: visible; /*Prevent hidden content*/
     align-items: center;
   }
 
   /* Navbar adjustments */
   .nav-container {
-    flex-direction: row; /* Keep navbar links in a row */
-    align-items: center; /* Center items vertically */
-    justify-content: space-between; /* Space out logo and links */
+    flex-direction: row; /*Keep navbar links in a row*/
+    align-items: center; /*Center items vertically*/
+    justify-content: space-between; /*Space out logo and links*/
     padding: 10px;
     gap: 10px;
   }
 
   .navbar-links {
-    flex-direction: row; /* Ensure links are in a row */
-    gap: 10px; /* Add spacing between links */
+    flex-direction: row; /*Ensure links are in a row*/
+    gap: 10px; 
   }
 
   .navbar-logo {
-    font-size: 20px; /* Slightly smaller for smaller screens */
+    font-size: 20px; /*Slightly smaller for smaller screens*/
   }
 
   /* Items grid */
@@ -363,18 +361,18 @@ body {
   }
 
   .items-grid {
-    grid-template-columns: 1fr; /* Ensure one product card per row */
+    grid-template-columns: 1fr; /*Ensure one product card per row*/
     gap: 20px;
   }
 
-  /* Product card adjustments */
+
   .product-card {
-    width: 100%; /* Full width for each card */
-    margin: 0; /* Remove margins between cards */
+    width: 100%; /*Full width for each card*/
+    margin: 0; 
   }
 
   .product-card img {
-    height: 200px; /* Increase image height */
+    height: 200px; 
   }
 
   .product-card-content {
@@ -390,14 +388,14 @@ body {
   }
 
   .product-card-button {
-    width: 100%; /* Button takes full width */
+    width: 100%; 
     font-size: 14px;
   }
 
-  /* Cart adjustments */
+
   .cart {
-    width: 100%; /* Use full width */
-    margin: 20px 0; /* Add space between the cart and product items */
+    width: 100%; 
+    margin: 20px 0; 
     padding: 25px;
   }
 
